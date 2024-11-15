@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: radial-gradient(circle, #0c2952, #05021a);
+
+}
+
+.active span {
+    width: 50%;
+}
+
+  
