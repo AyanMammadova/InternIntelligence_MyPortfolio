@@ -1,20 +1,48 @@
 import Aos from 'aos';
 import React, { useEffect } from 'react'
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import Skills from './Skills';
+import Contact from './Contact';
+import Education from './Education';
+import Experience from './Experience';
+import Profile from './Profile';
+import MarqueeElement from './MarqueeElement';
 
 function Main() {
   useEffect(() => {
-    Aos.init(); 
+    Aos.init();
   }, []);
   return (
     <>
-       <div className='flex justify-between text-white w-[95%] bg-[#161B33] m-[40px] p-[40px] rounded-3xl  h-[100px] items-center mx-[auto]'>
-        
-        <a href="/MammadovaAyanCV.pdf" download="MammadovaAyanCV.pdf">
-        <button className="download-button bg-slate-400 rounded p-[10px]">Download My CV</button>
-        </a>
-       
-       </div>
+      <div className='w-[95%]'>
+
+      </div>
+
+      <main className='scroll-smooth' style={{ scrollPaddingTop: '200px' }}>
+
+        <section id="home" className='pt-[140px]'>
+          <Profile />
+        </section>
+        {/* <MarqueeElement/> */}
+        <section id='education' className='pt-[50px]'>
+          <Education />
+        </section>
+        {/* <MarqueeElement/> */}
+        <section id="skills"  className='pt-[50px]'>
+          <Skills />
+        </section>
+        {/* <MarqueeElement/> */}
+        <section id="experience" className='pt-[50px]'>
+          <Experience />
+        </section>
+        {/* <MarqueeElement/> */}
+        <section id="contact" className='pt-[50px]'>
+          <Contact />
+        </section>
+      </main>
+
+
+
 
     </>
   )

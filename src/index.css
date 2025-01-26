@@ -3,12 +3,31 @@
 @tailwind utilities;
 
 body{
-    background: radial-gradient(circle, #0c2952, #05021a);
-
+    background: #05021a;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .active span {
     width: 50%;
 }
 
+.animate-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(59, 130, 246, 0.7); /* Normal state */
+    }
+    50% {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.7); /* Lighter color spread */
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(59, 130, 246, 0.7); /* Back to normal */
+    }}
   
