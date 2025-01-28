@@ -38,7 +38,7 @@ function Profile() {
                     </Link>
                 </div>
                 <div>
-                    <a href="/MammadovaAyanCV.pdf" download="MammadovaAyanCV.pdf">
+                    <a href="/CVAyanMammadova.pdf" download="CVAyanMammadova.pdf">
                         <button className="download-button bg-black border-white border-2 py-[3px] rounded mt-[10px] px-[10px]">Download My CV</button>
                     </a>
                 </div>
