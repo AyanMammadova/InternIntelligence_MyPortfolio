@@ -11,7 +11,7 @@ function Experience() {
     return (
         <>
             <div className='relative '>
-                <img  className='absolute top-[-70px] h-[45px] right-[40px]' src="/falling-star.png" alt="" />
+                <img  className='absolute top-[-70px] h-[45px] right-[40px]' src="/img/flaticons/falling-star.png" alt="" />
                 <p className='text-center text-[2.5em] text-white'>Experience</p>
             </div>
             <div className='font-josefin    text-white w-[95%] bg-black border-[3px] border-white m-[40px] p-[40px] rounded-3xl   items-center mx-[auto]'>
@@ -30,7 +30,7 @@ function Experience() {
                         icon={<BiHomeHeart />}
                     >
                         <h3 className="vertical-timeline-element-title">DOST center</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Youth DOST</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Youth DOST volunteer</h4>
 
                     </VerticalTimelineElement>
 
@@ -43,7 +43,7 @@ function Experience() {
                         icon={<FaHandHoldingHeart />}
                     >
                         <h3 className="vertical-timeline-element-title">ASAN service</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Master 1</h4>
+                        <h4 className="vertical-timeline-element-subtitle">Master 1 volunteer</h4>
 
                     </VerticalTimelineElement>
 

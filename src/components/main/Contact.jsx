@@ -2,36 +2,62 @@ import React, { useState } from 'react'
 import { FaGithub, FaLinkedin, FaPhoneAlt } from 'react-icons/fa'
 import { MdLocationOn, MdOutlineEmail } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 
 function Contact() {
   const [errors, setErrors] = useState({
-    fullname: false,
+    name: false,
     email: false,
     message: false
   })
+  const [formvalues, setFormValues] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
   function checkValidation(input, type) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const fullNameRegex = /^\s*[a-zA-Z]+(?:[ ',-][a-zA-Z]+)*\s*$/;
-  
+    const nameRegex = /^\s*[a-zA-Z]+(?:[ ',-][a-zA-Z]+)*\s*$/;
+
     const newErrors = { ...errors };
-  
+    const newFormValues = { ...formvalues }
     if (type === 'name') {
-      newErrors.fullname = !fullNameRegex.test(input)
+      newFormValues.name = input
+      newErrors.name = !nameRegex.test(input)
     } else if (type === 'email') {
+      newFormValues.email = input
       newErrors.email = !emailRegex.test(input)
     } else if (type === 'message') {
+      newFormValues.message = input
       newErrors.message = input.trim().length <= 5
     }
-  
-    setErrors(newErrors);}
+    setFormValues(newFormValues)
+    setErrors(newErrors)
+  }
+  function handleSubmit(event) {
+    const templateParams = {
+      recipient: 'Ayan Mammadova',
+      sender_name: formvalues.name,   
+      sender_email: formvalues.email,      
+      sender_message: formvalues.message,      
+    }
+    event.preventDefault()
+    if (!errors.name && !errors.email && !errors.message && formvalues.message.trim().length > 1 && formvalues.name.trim().length > 1 && formvalues.email.trim().length > 1) {
+      emailjs.send('service_stse3ai', 'template_fle15gf', templateParams, 'Zr2DliAmyduX3c6LH')
+      alert('submitted')
+    }
+    // emailjs.sendForm('service_id','template_id',e.target,'public_key')
+  }
+
+
   return (
     <>
       <div className='relative '>
-        <img className='absolute top-[-70px] h-[45px] right-[40px]' src="/falling-star.png" alt="" />
+        <img className='absolute top-[-70px] h-[45px] right-[40px]' src="/img/flaticons/falling-star.png" alt="" />
         <p className='text-center text-[2.5em] text-white'>Contact me</p>
       </div>
       <div className='font-josefin    text-white w-[95%] bg-black border-[3px] border-white m-[40px] md:p-[40px] rounded-3xl   items-center mx-[auto]'>
-        <p className='text-[1.4em] text-center p-[15px]'>Feel Free to Say Hello – Let’s Connect and Collaborate! <div className='absolute h-[1px] bg-white w-[90%] mx-auto'></div></p>
+        <div className='text-[1.4em] text-center p-[15px]'>Feel Free to Say Hello – Let’s Connect and Collaborate! <div className='absolute h-[1px] bg-white w-[80%] mx-auto'></div></div>
         <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
           <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
             <div className="py-6 md:py-0 md:px-6">
@@ -83,21 +109,21 @@ function Contact() {
 
               </div>
             </div>
-            <form noValidate="" className="flex  flex-col py-6 space-y-6 md:py-0 md:px-6">
+            <form onSubmit={(e) => { handleSubmit(e) }} className="flex  flex-col py-6 space-y-6 md:py-0 md:px-6">
               <label className="block relative">
-              <p className={`${errors.fullname ? 'absolute' : 'hidden'}  text-red-600 top-[60px] text-[.7em]`}>Enter your full name please</p>
+                <p className={`${errors.name ? 'absolute' : 'hidden'}  text-red-600 top-[60px] text-[.7em]`}>Enter your full name please</p>
                 <span className="mb-1">Full name</span>
                 <input
                   onChange={(e) => {
-                    checkValidation(e.target.value, 'fullname')
+                    checkValidation(e.target.value, 'name')
                   }}
                   type="text"
                   placeholder="Leroy Jenkins"
                   className="block text-black p-[5px] w-full rounded-md  " />
               </label>
-              
+
               <label className="block relative">
-              <p className={`${errors.email ? 'absolute' : 'hidden'}  text-red-600 top-[60px] text-[.7em]`}>Enter a valid email please</p>
+                <p className={`${errors.email ? 'absolute' : 'hidden'}  text-red-600 top-[60px] text-[.7em]`}>Enter a valid email please</p>
 
                 <span className="mb-1">Email address</span>
                 <input
@@ -109,7 +135,7 @@ function Contact() {
                   className="block text-black p-[5px] w-full rounded-md  " />
               </label>
               <label className="block relative">
-              <p className={`${errors.message ? 'absolute' : 'hidden'}  text-red-600 top-[110px] text-[.7em]`}>Enter longer message please</p>
+                <p className={`${errors.message ? 'absolute' : 'hidden'}  text-red-600 top-[110px] text-[.7em]`}>Enter longer message please</p>
 
                 <span className="mb-1">Message</span>
                 <textarea
@@ -118,10 +144,9 @@ function Contact() {
                   }}
                   rows="3"
                   className="block w-full rounded-md  text-black p-[5px] ">
-
                 </textarea>
               </label>
-              <button className='border-2  rounded-lg'>Submit!</button>
+              <button type='submit' className='border-2  rounded-lg'>Submit!</button>
             </form>
           </div>
         </section>

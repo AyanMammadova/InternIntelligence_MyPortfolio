@@ -7,6 +7,8 @@ import Education from './Education';
 import Experience from './Experience';
 import Profile from './Profile';
 import MarqueeElement from './MarqueeElement';
+import About from './About';
+import Projects from './Projects';
 
 function Main() {
   useEffect(() => {
@@ -18,24 +20,26 @@ function Main() {
 
       </div>
 
-      <main className='scroll-smooth' style={{ scrollPaddingTop: '200px' }}>
+      <main className='scroll-smooth' >
 
         <section id="home" className='pt-[140px]'>
           <Profile />
         </section>
-        {/* <MarqueeElement/> */}
+        <section id='about' className='pt-[50px]'>
+          <About />
+        </section>
         <section id='education' className='pt-[50px]'>
           <Education />
         </section>
-        {/* <MarqueeElement/> */}
         <section id="skills"  className='pt-[50px]'>
           <Skills />
         </section>
-        {/* <MarqueeElement/> */}
+        <section id="projects"  className='pt-[50px]'>
+          <Projects/> 
+        </section>
         <section id="experience" className='pt-[50px]'>
           <Experience />
         </section>
-        {/* <MarqueeElement/> */}
         <section id="contact" className='pt-[50px]'>
           <Contact />
         </section>

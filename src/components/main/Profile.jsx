@@ -9,7 +9,7 @@ function Profile() {
         <div className='bp900:flex  font-josefin  text-white w-[95%] bg-black  border-[3px] border-white m-[40px] p-[10px] md:p-[40px] rounded-3xl   items-center mx-[auto]'>
 
             <div  className='md:w-[250px] mx-auto w-[200px] h-[200px] md:h-[250px] border-2 rounded-full p-[3px]'>
-                <img className='rounded-full border-2  w-[100%] h-[100%] object-cover' src="/profil.png" alt="" />
+                <img className='rounded-full border-2  w-[100%] h-[100%] object-cover' src="/img/profil.png" alt="" />
             </div>
             <div data-aos="fade-left" className='z-10 bp900:w-[70%] bp900:ml-[50px] text-center bp900:text-start'>
                 <p className='text-[1.5em] md:text-[2em] '>Hi,I'm <span className='text-purple-400'>Ayan</span> Mammadova</p>

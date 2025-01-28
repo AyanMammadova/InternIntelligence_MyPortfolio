@@ -9,7 +9,7 @@ import { IoMenuOutline } from 'react-icons/io5'
 function Header() {
   const [showcanvas, setShowCanvas] = useState(false)
   const [activeLink, setActiveLink] = useState('home');
-  console.log(showcanvas)
+  
   function scrollToTop() {
     window.scrollTo({
       behavior: 'smooth',
@@ -18,7 +18,10 @@ function Header() {
   }
   return (
     <>
-      <div className='fixed z-50 w-[100%] '>
+      <div className={`${showcanvas ? 'block' : 'hidden'} bp1000:hidden z-50 bg-[#060822] fixed top-0 h-[100vh] w-[100%]`}>
+        <Offcanvas setShowCanvas={setShowCanvas} />
+      </div>
+      <div className='fixed z-40 w-[100%] '>
 
         <div className='bg-[#05021a] -z-50'
           style={{
@@ -35,7 +38,7 @@ function Header() {
           <div className='flex  justify-between w-[95%]  border-[3px]  border-white bg-black m-[10px] p-[30px] rounded-3xl  h-[60px] items-center mx-[auto]'>
             <div>
               <Link to={'/'} onClick={() => { scrollToTop() }} className='h-[30px]'>
-                <img className='h-[50px]' src="/galaxy.png" alt="" />
+                <img className='h-[50px]' src="/img/flaticons/galaxy.png" alt="" />
               </Link>
             </div>
             <div>
@@ -68,6 +71,14 @@ function Header() {
                   <span className={`${activeLink == 'skills' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-r-full left-1/2 w-0 transition-all h-[1px] bg-white  group-hover:w-3/6`}></span>
                   <span className={`${activeLink == 'skills' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-l-full right-1/2 w-0 transition-all h-[1px] bg-white group-hover:w-3/6`}></span>
                 </a>
+                <a
+                  onClick={() => { setActiveLink('projects') }}
+                  href='#projects' className="group relative w-max   px-[6px] mx-[3px] cursor-pointer">
+                  <span>Projects</span>
+                  <span className={`${activeLink == 'projects' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-r-full left-1/2 w-0 transition-all h-[1px] bg-white  group-hover:w-3/6`}></span>
+                  <span className={`${activeLink == 'projects' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-l-full right-1/2 w-0 transition-all h-[1px] bg-white group-hover:w-3/6`}></span>
+                </a>
+
 
                 <a
                   onClick={() => { setActiveLink('experience') }}
@@ -77,13 +88,6 @@ function Header() {
                   <span className={`${activeLink == 'experience' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-l-full right-1/2 w-0 transition-all h-[1px] bg-white group-hover:w-3/6`}></span>
                 </a>
 
-                <a
-                  onClick={() => { setActiveLink('projects') }}
-                  href='#projects' className="group relative w-max   px-[6px] mx-[3px] cursor-pointer">
-                  <span>Projects</span>
-                  <span className={`${activeLink == 'projects' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-r-full left-1/2 w-0 transition-all h-[1px] bg-white  group-hover:w-3/6`}></span>
-                  <span className={`${activeLink == 'projects' ? 'w-3/6' : 'w-0'} absolute -bottom-1 rounded-l-full right-1/2 w-0 transition-all h-[1px] bg-white group-hover:w-3/6`}></span>
-                </a>
 
                 <a
                   onClick={() => { setActiveLink('contact') }}
