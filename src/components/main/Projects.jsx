@@ -6,11 +6,8 @@ import { IoIosLink } from 'react-icons/io';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiNetlify } from 'react-icons/si';
 import { Link } from 'react-router-dom';
-import { Pagination, Navigation, EffectCube, FreeMode, Thumbs } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Projects() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
         <>
@@ -25,14 +22,14 @@ function Projects() {
                             <Link
                                 className='hidden  group-hover:block transition-all duration-300'
                                 target='_blank'
-                                to={'https://mdvayanlunaria.netlify.app/'}>
+                                to={'https://mdvayanlunariaecommerce.netlify.app/'}>
                                 <div className='flex h-[300px]  justify-center items-center '><IoIosLink />Go to site</div>
                             </Link>
                         </div>
                         <img className='group-hover:scale-105x  w-[100%] object-cover sm:min-h-[300px] transition-all duration-300 rounded-2xl' src="/img/projectimgs/lunaria1.png" alt="" />
                     </div>
                     <div className='sm:w-[50%]'>
-                        <Link target='_blank' to={'https://mdvayanlunaria.netlify.app/'} className='md:text-[2.5em] text-[1.3em] font-bold font-cormorant text-purple-400 flex items-center gap-[10px]'><IoIosLink className='text-[.7em]' />Lunaria</Link>
+                        <Link target='_blank' to={'https://mdvayanlunariaecommerce.netlify.app/'} className='md:text-[2.5em] text-[1.3em] font-bold font-cormorant text-purple-400 flex items-center gap-[10px]'><IoIosLink className='text-[.7em]' />Lunaria</Link>
                         <div className='flex gap-[10px] md:text-[1.5em]'>
                             <span className='text-[.9em] md:text-[1.2rem]'>Technologies used:</span>
                             <RiTailwindCssFill />
@@ -47,7 +44,7 @@ function Projects() {
                         </p>
                         <div className='flex gap-[10px]   pt-[17px] mt-[10px]'>
                             <Link target='_blank' to={'https://github.com/AyanMammadova/Lunaria_ecommerce'} className='border-white border-2 p-[5px] rounded-xl hover:text-purple-400 transition-all duration-200'>Github Repo</Link>
-                            <Link target='_blank' to={'https://mdvayanlunaria.netlify.app/'} className='border-white border-2 p-[5px] rounded-xl hover:text-purple-400 transition-all duration-200'>Demo Link</Link>
+                            <Link target='_blank' to={'https://mdvayanlunariaecommerce.netlify.app/'} className='border-white border-2 p-[5px] rounded-xl hover:text-purple-400 transition-all duration-200'>Demo Link</Link>
                         </div>
                     </div>
                 </div>
