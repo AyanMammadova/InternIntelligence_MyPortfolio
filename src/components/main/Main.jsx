@@ -6,7 +6,6 @@ import Contact from './Contact';
 import Education from './Education';
 import Experience from './Experience';
 import Profile from './Profile';
-import MarqueeElement from './MarqueeElement';
 import About from './About';
 import Projects from './Projects';
 

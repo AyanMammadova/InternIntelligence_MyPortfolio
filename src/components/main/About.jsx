@@ -3,11 +3,11 @@ import React from 'react'
 function About() {
     return (
         <>
-            <div className='relative '>
+            <div className='relative overflow-y-hidden'>
                 <img className='absolute top-[-70px] h-[45px] right-[40px]' src="/img/flaticons/falling-star.png" alt="" />
                 <p className='text-center text-[2.5em] text-white'>About me</p>
             </div>
-            <div className='font-josefin   text-white w-[95%] bg-black border-[3px] border-white m-[40px] md:p-[40px] rounded-3xl   items-center mx-[auto]'>
+            <div className='font-josefin overflow-y-hidden text-white w-[95%] bg-black border-[3px] border-white m-[40px] md:p-[40px] rounded-3xl   items-center mx-[auto]'>
                 <p className='text-[1.3em] p-[10px]'>Hi, I’m <span className='text-purple-500'>Ayan Məmmədova</span> I’m a passionate front-end developer with a knack for crafting clean, responsive, and user-friendly websites.
                     I’m currently in my third year pursuing a degree in Information Technology at UNEC,
                     where I’m expanding my knowledge of modern development practices and innovative web technologies.

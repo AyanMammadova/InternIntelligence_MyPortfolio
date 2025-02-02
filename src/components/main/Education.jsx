@@ -10,11 +10,11 @@ import 'react-vertical-timeline-component/style.min.css';
 function Education() {
     return (
         <>
-            <div className='relative '>
+            <div className='relative overflow-y-hidden'>
                 <img  className=' absolute top-[-70px] h-[45px] right-[40px]' src="/img/flaticons/falling-star.png" alt="" />
                 <p className='text-center text-[2.5em] text-white'>Education</p>
             </div>
-            <div className='font-josefin   text-white w-[95%] bg-black border-[3px] border-white m-[40px] p-[40px] rounded-3xl   items-center mx-[auto]'>
+            <div className='font-josefin  overflow-y-hidden text-white w-[95%] bg-black border-[3px] border-white m-[40px] p-[40px] rounded-3xl   items-center mx-[auto]'>
 
                 <VerticalTimeline>
                     <VerticalTimelineElement

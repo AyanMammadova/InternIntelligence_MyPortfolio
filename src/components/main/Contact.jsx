@@ -52,7 +52,7 @@ function Contact() {
 
   return (
     <>
-      <div className='relative '>
+      <div className='relative overflow-y-hidden'>
         <img className='absolute top-[-70px] h-[45px] right-[40px]' src="/img/flaticons/falling-star.png" alt="" />
         <p className='text-center text-[2.5em] text-white'>Contact me</p>
       </div>

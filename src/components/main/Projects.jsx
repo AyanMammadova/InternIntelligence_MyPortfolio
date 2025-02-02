@@ -11,11 +11,11 @@ function Projects() {
 
     return (
         <>
-            <div className='relative '>
+            <div className='relative overflow-y-hidden'>
                 <img className='absolute top-[-70px] h-[45px] right-[40px]' src="/img/flaticons/falling-star.png" alt="" />
                 <p className='text-center text-[2.5em] text-white'>My Projects</p>
             </div>
-            <div className='font-josefin gap-[30px] flex flex-col  text-white w-[95%] bg-black border-[3px] border-white m-[40px] md:p-[40px] rounded-3xl   items-center mx-[auto]'>
+            <div className='font-josefin overflow-y-hidden gap-[30px] flex flex-col  text-white w-[95%] bg-black border-[3px] border-white m-[40px] md:p-[40px] rounded-3xl   items-center mx-[auto]'>
                 <div className='  gap-[20px] sm:h-[50vh] items-center   sm:flex  p-[10px] rounded-md  '>
                     <div className='sm:w-[50%] overflow-hidden  rounded-2xl  relative group'>
                         <div className='absolute inset-0  transition-all duration-300   group-hover:bg-purple-500/15 rounded-2xl'>
